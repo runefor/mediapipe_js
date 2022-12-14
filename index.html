@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="demo.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
+    <!-- CONTENTS -->
+    <div class="container" style="margin-top: 20px">
+      <div class="columns">
+        <!-- WEBCAM INPUT -->
+        <div class="column">
+          <article class="panel is-info">
+            <p class="panel-heading">Webcam Input</p>
+            <div class="panel-block">
+              <video class="input_video4"></video>
+            </div>
+          </article>
+        </div>
 
-  <!-- CONTENTS -->
-  <div class="container" style="margin-top: 20px;">
-
-    <div class="columns">
-      
-      <!-- WEBCAM INPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Webcam Input
-          </p>
-          <div class="panel-block">
-            <video class="input_video4"></video>
-          </div>
-        </article>
+        <!-- MEDIAPIPE OUTPUT -->
+        <div class="column">
+          <article class="panel is-info">
+            <p class="panel-heading">Mediapipe Holistic</p>
+            <div class="panel-block">
+              <canvas class="output4" width="640px" height="360px"></canvas>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <!-- MEDIAPIPE OUTPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Mediapipe Holistic
-          </p>
-          <div class="panel-block">
-            <canvas class="output4" width="640px" height="360px"></canvas>
-          </div>
-        </article>
+      <div class="loading">
+        <div class="spinner"></div>
       </div>
     </div>
-    
-    <div class="loading">
-      <div class="spinner"></div>
-    </div>
-  <div style="visibility: hidden" class="control4">
-  </div>
+    <div style="visibility: hidden" class="control4"></div>
 
-  <script type="text/javascript" src="./main.js"></script>
-</body>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
 </html>
